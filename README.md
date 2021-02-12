@@ -3,10 +3,10 @@ New alternative Method: https://gist.github.com/jbrooksuk/c7c1ab6ea094a29d7dbb1f
 Sort the Nova resources and resource groups in the menu.
 
 Install:  
-`composer require normanhuth/nova-menu-order`
+`composer require netsells/nova-menu-order`
 
 Now publish the config file:  
-`php artisan vendor:publish --provider="NormanHuth\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=config`
+`php artisan vendor:publish --provider="Netsells\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=config`
 
 After publish this, You find the file config/nova-group-order.php, where You can sort the resources groups:
 ```php
@@ -18,26 +18,26 @@ After publish this, You find the file config/nova-group-order.php, where You can
 ___
 
 If the file resources/views/vendor/nova/resources/navigation.blade.php **not exists**, You can publish this file:  
-`php artisan vendor:publish --provider="NormanHuth\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=view`
+`php artisan vendor:publish --provider="Netsells\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=view`
 
 If this file already exist, You have 2 Options.  
 Option 1:  
 Overwrite the file with:  
-`php artisan vendor:publish --provider="NormanHuth\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=view --force`
+`php artisan vendor:publish --provider="Netsells\NovaMenuOrder\NovaMenuOrderServiceProvider" --tag=view --force`
 
 Option 2:  
 Edit the file and change `{{ $group }}` to `{!! $group !!}` and `{{ $resource::label() }}` to `{!! $resource::label() !!}`
 ___
 Use this package in the Nova resources:
 ```php
-use NormanHuth\NovaMenuOrder\Nova\CustomResource;
+use Netsells\NovaMenuOrder\Nova\CustomResource;
 
 class Contact extends CustomResource
 ```
 
 And to order the resources:
 ```php
-use NormanHuth\NovaMenuOrder\Nova\CustomResource;
+use Netsells\NovaMenuOrder\Nova\CustomResource;
 
 class Contact extends CustomResource
 {
